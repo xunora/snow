@@ -1,0 +1,33 @@
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+.thunder {
+    width: 100%;
+    height: 1000px;
+    
+}
+.snow {
+    padding: 10px;
+    font-size: 30px;
+    position: absolute;
+    color: aliceblue;
+    top: 0px;
+    left: 0;
+}
+@for $c from 1 to 1001 {
+    .snow#{$c} {
+        top: -random(1200) +px;
+        left: random($c * 30)+px;
+        animation: snow 5s $c *0.1 infinite linear ;
+    }
+}
+@keyframes snow {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: 1500px;
+    }
+}
